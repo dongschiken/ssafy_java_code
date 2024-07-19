@@ -1,0 +1,60 @@
+package com.ssafy.class_extends;
+
+public class Person {
+	
+}
+
+class Parent {
+	
+	String name;
+	int age;
+	
+	void cook() {
+		System.out.println("요리하다.");
+	}
+
+	public Parent(String name, int age) {
+		super();
+		this.name = name;
+		this.age = age;
+	}
+
+	public Parent() {
+		super();
+	}
+	
+}
+
+class Child extends Parent {
+	
+	String job;
+
+	public Child(String name, int age, String job) {
+		super(name, age);
+		this.job = job;
+	}
+
+	public Child(String name, int age) {
+		super(name, age);
+	}
+
+	public Child() {}
+	
+}
+
+class GrandSon extends Child {
+
+	String schoolName;
+	String[] friends;
+	
+	public GrandSon(String name, int age, String job, String schoolName, String[] friends) {
+		super(name, age, job);
+		this.schoolName = schoolName;
+		this.friends = friends;
+	}
+
+	public GrandSon() {}
+
+}
+
+class Friends {

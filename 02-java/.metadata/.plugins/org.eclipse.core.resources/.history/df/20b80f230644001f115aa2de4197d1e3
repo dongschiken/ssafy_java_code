@@ -1,0 +1,36 @@
+package com.ssafy.hw.day04.step03;
+/**
+ * 도서 정보를 나타내는 클래스
+ */
+public class Book {
+	
+	String isbn; // 표준 도서번호
+	String title;
+	String author;
+	String publisher;
+	int price;
+	String desc;
+	public Book(String isbn, String title, String author, String publisher, int price, String desc) {
+		this.isbn = isbn;
+		this.title = title;
+		this.author = author;
+		this.publisher = publisher;
+		this.price = price;
+		this.desc = desc;
+	}
+	
+	public Book() {}
+	
+	@Override
+	public String toString() {
+		return String.format("도서번호 : %s\t|\t도서이름 : %s\t|\t저자 : %s\t|\t디자이너 : %s\t|\t가격 : %s\t|\t설명 : %s\t|\t" 
+				,isbn
+				,title
+				,author
+				,publisher
+				,price
+				,desc);
+	}
+	
+}
+

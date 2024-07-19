@@ -1,0 +1,20 @@
+package com.ssafy.hw.day03.step05;
+
+import java.io.*;
+
+public class MinerGame {
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		System.setIn(new FileInputStream("data/MinerGame.txt"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		// 상 하 좌 우 대각선4개 탐색
+		int[] dr = new int[] {-1, 1, 0, 0, -1, -1, 1, 1};
+		int[] dc = new int[] {0, 0, -1, 1, 1, -1, -1, 1};
+		
+		int N = Integer.parseInt(br.readLine());
+		int[][] map = new int[N][N];
+		
+		
+		
+	}
+}

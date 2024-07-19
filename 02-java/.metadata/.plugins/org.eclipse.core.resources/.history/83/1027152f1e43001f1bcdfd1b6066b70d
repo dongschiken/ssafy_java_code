@@ -1,0 +1,42 @@
+package com.ssafy.hw.day02.step04;
+
+import java.io.*;
+import java.util.*;
+
+public class AirCrashes {
+
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		int N = Integer.parseInt(br.readLine());
+		int[] casualty = new int[N];
+		
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		for (int i = 0; i < casualty.length; i++) {
+			casualty[i] = Integer.parseInt(st.nextToken());
+		}
+		int last = casualty[casualty.length-1];
+		int min = 0;
+		int count = 0;
+		// 가장 마지막 사상자의 수보다 작으면 min값으로 초기화
+		for (int i = 0; i < casualty.length-1; i++) {
+			if(last > casualty[i]) {
+				min = casualty[i];
+				count++;
+			}
+		}
+		// count가 0이면 가장 마지막 사상자 수보다 작은 값이 없음 == -1출력
+		if(count == 0) {
+			System.out.println(-1);
+			return;
+		}
+		// 가장 높은 사상자 수 구하기 위해 정렬
+		Arrays.sort(casualty);
+		// 가장 높은 사상자 - min값을 빼면 결과 나옴
+		System.out.println(casualty[casualty.length-1]-min);
+		
+	}
+
+}

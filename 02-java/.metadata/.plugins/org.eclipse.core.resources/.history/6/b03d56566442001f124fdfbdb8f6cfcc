@@ -1,0 +1,28 @@
+package solved;
+
+import java.io.*;
+import java.util.*;
+
+public class DigitTest1 {
+
+	public static void main(String[] args) throws IOException, NumberFormatException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		int N = 5;
+		// 15를 만든다.
+		// 1 2 3 4 5
+		//   6 7 8 9
+		//	 10 11 12
+		
+		for (int i = 0; i < N; i++) {
+			System.out.print(" ".repeat(i-1));
+			for (int j = i; j < N; j++) {
+				System.out.print(j+i+1);			
+			}
+			System.out.println();
+		}
+
+	}
+
+}

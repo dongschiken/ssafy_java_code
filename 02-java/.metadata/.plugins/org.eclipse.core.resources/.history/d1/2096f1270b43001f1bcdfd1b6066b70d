@@ -1,0 +1,33 @@
+package day02_array;
+
+import java.io.*;
+import java.util.*;
+
+public class SwitchTest {
+	
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		int N = Integer.parseInt(st.nextToken());
+		int M = Integer.parseInt(st.nextToken());
+		
+		int[] bulb = new int[N];
+		st = new StringTokenizer(br.readLine());
+		for (int i = 0; i < M; i++) {
+			int switching = Integer.parseInt(st.nextToken());
+			int temp = switching;
+			while (temp < N) {
+				System.out.println(temp);
+				if(bulb[temp] == 0) {
+					bulb[temp] = 1;
+				}else {
+					bulb[temp] = 0;
+				}
+				switching += temp;
+			}
+		}
+		System.out.println(Arrays.toString(bulb));
+	}
+
+}

@@ -1,0 +1,38 @@
+package com.ssafy.swea;
+
+import java.io.*;
+import java.util.*;
+
+public class _1859 {
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		System.setIn(new FileInputStream("data/_1859.txt"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		StringTokenizer st;
+		int T = Integer.parseInt(br.readLine());
+		
+		for (int i = 0; i < T; i++) {
+			
+			int N = Integer.parseInt(br.readLine());
+			int[] arr = new int[N];
+			
+			st = new StringTokenizer(br.readLine());
+			for (int j = 0; j < N; j++) {
+				arr[j] = Integer.parseInt(st.nextToken());
+			}
+			
+			int price = 0;
+			for (int j = 0; j < N; j++) {
+				int max = 0;
+				for (int j2 = j+1; j2 < N; j2++) {
+					if(arr[j] < arr[j2]) {
+						max = Math.max(max, arr[j2]-arr[j]);
+					}
+				}
+				price += max;
+			}
+			bw.write(price+"\n");
+		}
+		bw.flush();
+	}
+}

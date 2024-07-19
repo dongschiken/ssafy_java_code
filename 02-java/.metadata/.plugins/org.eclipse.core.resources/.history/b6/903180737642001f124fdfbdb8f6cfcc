@@ -1,0 +1,13 @@
+package java06_offline;
+
+public class EvenOddTest {
+	
+	static boolean isEvan(int n) {
+		return (n & 1) == 0;
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(isEvan(2));
+	}
+	
+}

@@ -1,0 +1,21 @@
+package solved;
+
+import java.io.*;
+import java.util.*;
+
+public class GabjaTest {
+	
+	public static void main(String[] args) {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		String tenGan = "갑을병정무기경신임계";
+		String twelveEasy = "자축인묘진사오미신유술해";
+		String[] gabjas = new String[60]; 
+		for (int i = 0; i < 10; i++) {
+			for (int j = 0; j < 6; j++) {
+				gabjas[j+i] = (tenGan.charAt(i)+twelveEasy.charAt(i))+"";
+			}
+		}
+	}
+}

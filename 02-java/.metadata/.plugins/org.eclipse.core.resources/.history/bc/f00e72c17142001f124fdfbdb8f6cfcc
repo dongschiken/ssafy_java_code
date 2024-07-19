@@ -1,0 +1,41 @@
+package solved;
+
+import java.io.*;
+import java.util.*;
+
+public class GameTest {
+
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		System.out.println("가위바위보 게임을 시작합니다. 아래 보기 중 하나를 고르시오");
+		System.out.println("1. 5판3승");
+		System.out.println("2. 3판2승");
+		System.out.println("3. 1판1승");
+		
+		// 1 == 3
+		// 2 == 2
+		// 3 == 1
+		int N = Integer.parseInt(br.readLine());
+		switch (N) {
+		case 1:
+			N = 3;
+			break;
+		case 2:
+			N = 2;
+			break;
+		case 3:
+			N = 1;
+			break;
+		}
+		
+		// 0 == 컴퓨터
+		// 1 == 유저
+		int[] win = new int[2];
+		while (win[0] < N || win[1] < N) {
+			
+		}
+	}
+
+}

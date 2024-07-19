@@ -1,0 +1,32 @@
+package solved;
+
+import java.io.*;
+import java.util.*;
+
+
+public class Season1 {
+	
+	public static void main(String[] args) throws IOException, NumberFormatException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		String season = "";
+		int month = 0;
+		for (int i = 0; i < 3; i++) {
+			bw.write("월 입력>>");
+			month = Integer.parseInt(br.readLine());
+			if(month > 2 && month < 6) {
+				season = "봄";
+			}else if(month > 5 && month < 9) {
+				season = "여름";
+			}else if(month > 8 && month < 12) {
+				season = "가을";
+			}else {
+				season = "겨울";
+			}
+			bw.write(month+"월은 "+season+"입니다.");
+		}
+		
+	}
+
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.io.BufferedReader"/>
+    <fullyQualifiedTypeName name="com.ssafy.ws.day04.step02.Person"/>
+    <fullyQualifiedTypeName name="com.ssafy.domabbam.DomaBbam"/>
+    <fullyQualifiedTypeName name="com.ssafy.hw.day04.step02.Movie"/>
+    <fullyQualifiedTypeName name="com.ssafy.hw.day04.step03.Book"/>
+    <fullyQualifiedTypeName name="com.ssafy.hw.day03.step04.RestaurantTest"/>
+    <fullyQualifiedTypeName name="com.ssafy.hw.day03.step04.Restaurant"/>
+    <fullyQualifiedTypeName name="com.ssafy.hw.day03.step04.Review"/>
+    <fullyQualifiedTypeName name="javax.swing.plaf.synth.SynthSpinnerUI"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="com.ssafy.hw.day03.step05.User"/>
+    <fullyQualifiedTypeName name="com.ssafy.hw.day03.step05.Article"/>
+    <fullyQualifiedTypeName name="java.io.InputStream"/>
+    <fullyQualifiedTypeName name="pkg1.pkg2.Person"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="modifier06_singleton.ScoreManager"/>
+    <fullyQualifiedTypeName name="modifier07_object_array.StudentManager"/>
+    <fullyQualifiedTypeName name="java.lang.Package"/>
+    <fullyQualifiedTypeName name="modifier07_object_array.Student"/>
+    <fullyQualifiedTypeName name="org.jcp.xml.dsig.internal.dom.ApacheOctetStreamData"/>
+    <fullyQualifiedTypeName name="com.ssafy.offline.Test01Manager"/>
+    <fullyQualifiedTypeName name="com.ssafy.hw.day05.step02.Movie"/>
+    <fullyQualifiedTypeName name="com.ssafy.hw.day05.step02.MovieManager"/>
+    <fullyQualifiedTypeName name="com.ssafy.hw.day05.step03.Book"/>
+    <fullyQualifiedTypeName name="com.ssafy.hw.day05.step03.BookManager"/>
+    <fullyQualifiedTypeName name="java.security.DrbgParameters.Reseed"/>
+    <fullyQualifiedTypeName name="com.ssafy.hw.day05.step04.Restaurant"/>
+    <fullyQualifiedTypeName name="com.ssafy.hw.day05.step04.Review"/>
+    <fullyQualifiedTypeName name="com.ssafy.hw.day05.step04.RestaurantManager"/>
+    <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.io.FileInputStream"/>
+    <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+</qualifiedTypeNameHistroy>

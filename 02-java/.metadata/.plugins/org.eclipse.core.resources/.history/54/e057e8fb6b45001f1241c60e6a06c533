@@ -1,0 +1,23 @@
+package com.ssafy.class_extends;
+
+public class Person {
+
+	String name;
+	int age;
+	
+	public void eat() {
+		System.out.println("음식을 먹는다.");
+	}
+	
+}
+class Student extends Person{
+	
+	Person p = new Person();
+	
+	String major;
+	
+	public void study() {
+		System.out.println("공부를 합니다.");
+	}
+	
+}

@@ -1,0 +1,16 @@
+package com.ssafy.hw.day03.step05;
+
+import java.io.*;
+
+public class MinerGame {
+	public static void main(String[] args) throws FileNotFoundException {
+		System.setIn(new FileInputStream("data/MinerGame.txt"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		String name = "홍길동";
+		String word = "홍";
+		System.out.println(name.contains(word));
+		System.out.println(word.concat(name));
+		
+	}
+}

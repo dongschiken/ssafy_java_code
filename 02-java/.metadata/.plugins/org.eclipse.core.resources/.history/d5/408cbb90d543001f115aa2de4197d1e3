@@ -1,0 +1,31 @@
+package java01_class;
+
+public class Method {
+	
+	public static void main(String[] args) {
+		하루일과();
+	}
+	
+	public static void 교육() {
+		System.out.println("오전 수업을 듣는다.");
+		System.out.println("점심을 먹는다.");
+		System.out.println("오후 수업을 듣는다.");
+	}
+	
+	public static void 오전준비() {
+		System.out.println("아침에 일어난다.");
+		System.out.println("대중교통으로 교육장으로 이동한다.");
+	}
+	
+	public static void 하루일과() {
+		오전준비();
+		교육();
+		교육이후시간();
+	}
+	
+	public static void 교육이후시간() {
+		System.out.println("대중교통으로 집으로 이동한다.");
+		System.out.println("과제를 해결한다.");
+		System.out.println("잠을 잔다.");
+	}
+}

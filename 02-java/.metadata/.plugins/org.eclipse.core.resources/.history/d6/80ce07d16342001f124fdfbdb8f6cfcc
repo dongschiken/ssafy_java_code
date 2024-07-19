@@ -1,0 +1,21 @@
+package solved;
+
+import java.io.*;
+import java.util.*;
+
+public class DigitTest1 {
+
+	public static void main(String[] args) throws IOException, NumberFormatException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		int N = 5;
+		for (int i = 0; i < N; i++) {
+			for (int j = i+1; j < N; j++) {
+				System.out.println(j+i);
+			}
+		}
+
+	}
+
+}

@@ -1,0 +1,37 @@
+package com.ssafy.hw.day02.step02;
+
+import java.io.*;
+
+public class Circuit {
+
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		int[] arr = new int[10];
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = i+10;
+		}
+		
+		System.out.println("-----원소 10개 출력-----");
+		for (int i : arr) {
+			System.out.print(i+" ");
+		}
+		System.out.println();
+		System.out.println("-----원소 10개 중 짝수만 출력-----");
+		for (int i : arr) {
+			if(i % 2 == 0) {
+				System.out.print(i+" ");
+			}
+		}
+		System.out.println();
+		System.out.print("-----바꿀 위치 입력 : ");
+		int switchIndex = Integer.parseInt(br.readLine());
+		System.out.print("-----수 입력 : ");
+		int number = Integer.parseInt(br.readLine());
+		arr[switchIndex] = number;
+		System.out.println("-----원소 10개 출력-----");
+		for (int i : arr) {
+			System.out.println(i+" ");
+		}
+	}
+}

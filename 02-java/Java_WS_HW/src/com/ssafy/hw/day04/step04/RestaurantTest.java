@@ -1,0 +1,23 @@
+package com.ssafy.hw.day04.step04;
+
+public class RestaurantTest {
+	
+	public static void main(String[] args) {
+		Restaurant restaurant1 = new Restaurant(101, "을밀대", "서울", "냉명", 4);
+		Restaurant restaurant2 = new Restaurant(401, "도마29", "대구", "연어초밥", 3);
+		
+		Review review = new Review(1, 101, "김싸피", "너무 맛있네요.");
+		Review review2 = new Review(2, 401, "나싸피", "연어초밥은 여기가 최고!");
+		
+		
+		System.out.println("*".repeat(40)+"맛집목록"+"*".repeat(40));
+		System.out.println(restaurant1.toString()); 
+		System.out.println(restaurant2.toString()); 
+		System.out.println("*".repeat(40)+"리뷰목록"+"*".repeat(40));
+		System.out.println(review.toString());
+		System.out.println(review2.toString());
+	}
+	
+	
+
+}

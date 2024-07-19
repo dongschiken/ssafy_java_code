@@ -1,0 +1,106 @@
+package com.ssafy.hw.day05.step04;
+/**
+ * 맛집, 리뷰 객체의 리스트를 배열로 유지하며 관리하는 클래스
+ */
+
+import java.security.DrbgParameters.Reseed;
+import java.util.Arrays;
+
+public class RestaurantManager {
+	//코드를 작성해주세요. 
+	
+	private static final int MAX_RESTAURANT_SIZE = 100;
+	private static final int MAX_REVIEW_SIZE = 1000;
+	Restaurant[] restaurants = new Restaurant[MAX_RESTAURANT_SIZE];
+	Review[] reviews = new Review[MAX_REVIEW_SIZE];
+	
+	private int restaurantSize = 0;
+	private int reviewSize = 0;
+	
+	public boolean addRestaurant(Restaurant restaurant) {
+		if(restaurantSize < MAX_RESTAURANT_SIZE) {
+			restaurants[restaurantSize++] = restaurant;
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean addReview(Review review) {
+		if(reviewSize < MAX_REVIEW_SIZE) {
+			reviews[reviewSize++] = review;
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean updateRestaurant(Restaurant restaurant) {
+		for (int i = 0; i < restaurantSize; i++) {
+			if(restaurants[i].equals(restaurant)) {
+				restaurants[i] = restaurant;
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean removeRestaurant(int resId) {
+		boolean check = false;
+		int idx = 0;
+		Restaurant[] temp = new Restaurant[MAX_RESTAURANT_SIZE];
+		for (int i = 0; i < restaurantSize; i++) {
+			if(restaurants[i].getResId() == resId) {
+				check = true;
+			}else {
+				temp[idx++] = restaurants[i];
+			}
+		}
+		if(!check) return false; // 삭제 실패
+		restaurants = temp;
+		restaurantSize -= 1;
+		return true; // 삭제 성공
+	}
+	
+	public boolean removeReview(int reviewId) {
+		boolean check = false;
+		int idx = 0;
+		Review[] temp = new Review[MAX_REVIEW_SIZE];
+		for (int i = 0; i < reviewSize; i++) {
+			if(reviews[i].getReviewId() == reviewId) {
+				check = true;
+			}else {
+				temp[idx++] = reviews[i];
+			}
+		}
+		if(!check) return false; // 리뷰삭제 실패
+		reviews = temp;
+		reviewSize -= 1;
+		return true; // 리뷰삭제 성공
+	}
+	
+	public Restaurant searchByResId(int resId) {
+		for (int i = 0; i < restaurantSize; i++) {
+			if(restaurants[i].getResId() == resId) {
+				return restaurants[i];
+			}
+		}
+		return null;
+	}
+	
+	public Restaurant[] getRestaurantList() {
+		return Arrays.copyOf(restaurants, restaurantSize);
+	}
+	
+	public Review[] getReviews() {
+		return Arrays.copyOf(reviews, reviewSize);
+	}
+	
+	public Restaurant getRestaurant(int resId) {
+		for (int i = 0; i < restaurantSize; i++) {
+			if(restaurants[i].getResId() == resId) {
+				return restaurants[i];
+			}
+		}
+		return null;
+	}
+	
+}

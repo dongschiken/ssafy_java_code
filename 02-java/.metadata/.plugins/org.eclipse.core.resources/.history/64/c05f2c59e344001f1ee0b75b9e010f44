@@ -1,0 +1,108 @@
+package com.ssafy.hw.day03.step05;
+
+import java.io.*;
+import java.util.Arrays;
+import java.util.StringTokenizer;
+
+public class MinerGame {
+	static int count = 0;
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		System.setIn(new FileInputStream("data/MinerGame.txt"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		// 상 하 좌 우 대각선4개 탐색
+		int[] dr = new int[] {-1, 1, 0, 0, -1, -1, 1, 1};
+		int[] dc = new int[] {0, 0, -1, 1, 1, -1, -1, 1};
+		
+		int N = Integer.parseInt(br.readLine());
+		int[][] map = new int[N][N];
+		
+		int nowR = 0;
+		int nowC = 0;
+		StringTokenizer st;
+		for (int i = 0; i < N; i++) {
+			st = new StringTokenizer(br.readLine());
+			for (int j = 0; j < N; j++) {
+				int temp = Integer.parseInt(st.nextToken());
+				map[i][j] = temp;
+				if(temp == 0) {
+					nowR = i;
+					nowC = j;
+				}
+			}
+		}
+		//System.out.println(nowR);
+		//System.out.println(nowC);
+		//System.out.println(Arrays.deepToString(map));
+		
+		int M = Integer.parseInt(br.readLine());
+		int nr = 0;
+		int nc = 0;
+		int[] newRC = new int[2];
+		String command = "";
+		for (int i = 0; i < M; i++) {
+			command = br.readLine();
+			
+			switch (command) {
+			// 0, 1, 2, 3 순서대로
+			// X일경우 8번 반복해서 0으로 만든다.
+			case "U":
+				nr = nowR + dr[0];
+				nc = nowC + dc[0];
+				newRC = stone(nowR, nowC, nr, nc, map);
+				nr = newRC[0];
+				nc = newRC[1];
+				break;
+			case "D":
+				nr = nowR + dr[1];
+				nc = nowC + dc[1];
+				newRC = stone(nowR, nowC, nr, nc, map);
+				nr = newRC[0];
+				nc = newRC[1];
+				break;
+			case "L":
+				nr = nowR + dr[2];
+				nc = nowC + dc[2];
+				newRC = stone(nowR, nowC, nr, nc, map);
+				nr = newRC[0];
+				nc = newRC[1];
+				break;
+			case "R":
+				nr = nowR + dr[3];
+				nc = nowC + dc[3];
+				newRC = stone(nowR, nowC, nr, nc, map);
+				nr = newRC[0];
+				nc = newRC[1];
+				break;
+			case "X":
+				Dynamite(nowR, nowC, map, dr, dc);
+				break;
+			}
+		}
+	}
+	public static int[] stone(int nowR, int nowC, int nr, int nc, int[][] map) {
+		int r = 0;
+		int c = 0;
+		if(map[nr][nc] == 3 || map[nr][nc] == 2) {
+			map[nr][nc] = map[nr][nc] -1;
+			r = nowR;
+			c = nowC;
+		}else if(map[nr][nc] == 1) {
+			map[nr][nc] -= 1;
+			count++;
+			r = nr;
+			c = nc;
+		}else {
+			r = nr;
+			c = nc;
+		}
+		return new int[] {r, c};
+	}
+	public static void Dynamite(int nowR, int nowC, int[][] map, int[] dr, int[] dc) {
+		for (int i = 0; i < 8; i++) {
+			int nr = nowR + dr[i];
+			int nc = nowC + dc[i];
+			map[nr][nc] = 0;
+		}
+	}
+}

@@ -1,0 +1,44 @@
+package solved;
+
+import java.io.*;
+
+public class GabjaTest {
+	
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		String tenGan = "갑을병정무기경신임계";
+		String twelveGi = "자축인묘진사오미신유술해";
+		String[] gabjas = new String[60];
+		int ten = 0;
+		int twelve = 0;
+		for (int i = 0; i < 60; i++) {
+			gabjas[i] = (tenGan.substring(ten, ten+1)+twelveGi.substring(twelve, twelve+1))+"";
+			ten++;
+			twelve++;
+			if(ten % 10 == 0) {
+				ten = 0;
+			}
+			if(twelve % 12 == 0) {
+				twelve = 0;
+			}
+		}
+		// 1804
+		while (true) {
+			System.out.print("60갑자를 입력하세요 : ");
+			String input = br.readLine();
+			if(input.equals("종료")) return;
+			for (int i = 0; i < 60; i++) {
+				if(gabjas[i].equals(input)) {
+					for (int j = 1804+i; j <= 2100; j += 60) {
+						bw.write(j+" ");
+					}
+				}
+			}
+			bw.write("\n");
+			bw.flush();
+		}
+		
+	}
+}

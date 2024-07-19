@@ -1,0 +1,26 @@
+package com.ssafy.class_extends;
+
+import java.util.Scanner;
+
+public class Exam extends Object{
+	
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		final int MAX_FRIEND = 100;
+		
+		GrandSon gson = new GrandSon();
+		gson.age = 10;
+		gson.name = "김길동";
+		gson.job = "학생";
+		gson.schoolName = "대전초등학교";
+		gson.friends = new Friends[MAX_FRIEND];
+		
+		for (int i = 0; i < 1; i++) {
+			gson.friends[i] = new Friends(sc.next(), sc.nextInt());
+		}
+		
+		System.out.println(gson.friends[0]);
+	}
+	
+}

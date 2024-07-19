@@ -1,0 +1,20 @@
+package java06_offline;
+
+public class EvenOddTest {
+	
+	// 짝수라면 0
+	static boolean isEvan(int n) {
+		return (n & 1) == 0;
+	}
+	
+	// 홀수라면 1
+	static boolean isOdd(int n) {
+		return (n & 1) == 1;
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(isEvan(97) ? "97은 짝수" : "97은 홀수");
+		System.out.println(isEvan(100) ? "100은 짝수" : "100은 홀수");
+	}
+	
+}

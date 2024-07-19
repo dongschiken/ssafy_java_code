@@ -1,0 +1,15 @@
+package java06_offline;
+
+public class BitTest {
+	
+	public static void main(String[] args) {
+		byte i = 5;
+		// 00000101
+		
+		byte j = 2;
+		// 00000010
+		
+		System.out.println(~i);
+	}
+
+}

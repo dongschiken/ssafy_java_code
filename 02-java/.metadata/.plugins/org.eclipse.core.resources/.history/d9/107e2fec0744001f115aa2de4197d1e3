@@ -1,0 +1,27 @@
+package com.ssafy.hw.day03.step04;
+
+public class Restaurant {
+	
+	int resId;
+	String name;
+	String address;
+	String signatureMenu;
+	int rate;
+	
+	public Restaurant(int resId, String name, String address, String signatureMenu, int rate) {
+		super();
+		this.resId = resId;
+		this.name = name;
+		this.address = address;
+		this.signatureMenu = signatureMenu;
+		this.rate = rate;
+	}
+
+	public Restaurant() {}
+	
+	@Override
+	public String toString() {
+		return super.toString();
+	}
+	
+}

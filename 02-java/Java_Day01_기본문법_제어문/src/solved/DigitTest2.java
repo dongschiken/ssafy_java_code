@@ -1,0 +1,35 @@
+package solved;
+
+import java.io.*;
+
+public class DigitTest2 {
+	
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		int N = Integer.parseInt(br.readLine());
+		int number = 2*N-1;
+		// 5 + 5 - 9 = 1 + 2
+		// 6 + 5 - 9 = 2 + 3
+		// 7 + 5 - 9 = 3 + 4
+		// 8 + 5 - 9 = 4 + 5
+
+		int sum = 1;
+		for (int i = 0; i < number; i++) {
+			if( i < N ) {
+				bw.write(" ".repeat(i));
+				for (int j = i*2; j < number; j++) {
+					bw.write((sum++)+"");
+				}
+			}else {
+				bw.write(" ".repeat(number-i-1));
+				for (int j = number; j < (i*2)+2; j++) {
+					bw.write((sum++)+"");
+				}
+			}
+			bw.write("\n");
+		}
+		bw.flush();
+	}
+}

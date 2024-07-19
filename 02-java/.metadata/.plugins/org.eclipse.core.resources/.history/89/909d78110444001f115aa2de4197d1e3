@@ -1,0 +1,18 @@
+package com.ssafy.hw.day04.step02;
+
+public class MovieTest {
+
+	public static void main(String[] args) {
+		
+		Movie movie1 = new Movie();
+		movie1.id = 1004202407;
+		movie1.title = "살인의 추억";
+		movie1.director = "봉준호";
+		movie1.genre = "스릴러";
+		movie1.runningTime = 164;
+		
+		movie1.showMovieProfile(id);
+		
+	}
+
+}

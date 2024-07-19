@@ -1,0 +1,41 @@
+package solved;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.Arrays;
+import java.util.StringTokenizer;
+
+public class BlastFurnace {
+	
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		int start = Integer.parseInt(st.nextToken());
+		int target = Integer.parseInt(st.nextToken());
+		int N = Integer.parseInt(br.readLine());
+		int[] number = new int[N];
+		for (int i = 0; i < N; i++) {
+			int temp = Integer.parseInt(br.readLine());
+			// 버튼을 눌러서 가는 경우
+			number[i] = Math.abs(temp-target)+1;
+		}
+		Arrays.sort(number);
+		int result = Math.abs(start - target);
+		result = Math.min(result, number[0]);
+		if( result > 600) {
+			System.out.println(-1);
+		}else {
+			System.out.println(result);
+		}
+	}
+}
+//67 4
+//4
+//88
+//999
+//333
+//5

@@ -1,0 +1,11 @@
+package com.ssafy.ws.step4;
+
+/**
+ * 체크메이트 판별하기
+ */ 
+public class Checkmate {
+
+	public static void main(String[] args) throws Exception{
+		}
+	}
+}

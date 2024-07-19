@@ -1,0 +1,17 @@
+package solved;
+
+import java.io.*;
+import java.util.*;
+
+public class GameTest {
+
+	public static void main(String[] args) {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		System.out.print("abc\r\n");
+		System.out.println("dfg");
+		
+	}
+
+}

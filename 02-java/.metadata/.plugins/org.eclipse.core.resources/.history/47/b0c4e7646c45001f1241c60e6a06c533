@@ -1,0 +1,16 @@
+package com.ssafy.class_extends;
+
+public class Exam extends Object{
+	
+	public static void main(String[] args) {
+
+		
+		GrandSon gson = new GrandSon();
+		gson.age = 10;
+		gson.name = "김길동";
+		gson.job = "학생";
+		gson.schoolName = "대전초등학교";
+		gson.friends = new String[10];
+	}
+	
+}

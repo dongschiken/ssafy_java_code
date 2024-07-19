@@ -1,0 +1,74 @@
+package com.ssafy.hw.day02.step05;
+
+import java.io.*;
+import java.util.*;
+
+public class EmergencyEscape {
+
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		// 8
+		int N = Integer.parseInt(br.readLine());
+		// 속도
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		// 고도
+		StringTokenizer st2 = new StringTokenizer(br.readLine());
+		int[][] escapes = new int[N+1][2];
+		for (int i = 1; i < escapes.length; i++) {
+			escapes[i][0] = Integer.parseInt(st.nextToken());
+			escapes[i][1] = Integer.parseInt(st2.nextToken());
+		} 
+		
+		int testcase = 5;
+		int sectionAverage = 900;
+		int altitude = 4000;
+		int speedSum = 0;
+		int speedAvg = 0;
+		int temp = 0;
+		int minMinute = Integer.MAX_VALUE;
+		OUT:
+		while (testcase > 2) {
+			// 구간 평균
+
+			// 일단 1~testcase의 분만큼 구간합 구하기
+			for (int i = 1; i <= testcase; i++) {
+				speedSum += escapes[i][0];
+			}
+			
+			// testcase가 4라면 speedSum에서 escape[0][0]을빼고 escape[4][0]을더하면 다음 speedSum값이 나온다.
+			for (int i = 1; i <= N - testcase; i++) {
+				speedAvg = speedSum / testcase;
+				if(speedAvg >= sectionAverage) {
+					// 고도까지 하강해야하므로 여기서 고도 하강 체크
+					// 고도 하강 이 4000, 3000, 2000 이상이라면 for문 탈출
+					int descent = escapes[i][1] - escapes[i+testcase][1];
+					
+					if(descent >= altitude) {
+						System.out.println(descent);
+						temp = i+testcase;
+						System.out.println(i);
+						System.out.println(testcase);
+						break OUT;
+					}
+				}
+				speedSum -= escapes[i][0];
+				speedSum += escapes[i+testcase][0];
+			}
+			
+			
+			altitude -= 1000;
+			sectionAverage += 100;
+			testcase--;
+		}
+		minMinute = Math.min(minMinute, temp);
+		System.out.println(minMinute);
+		
+	}
+	
+}
+
+//8
+//800 900 1000 1100 800 900 800 600
+//8000 9000 8000 7000 6000 8000 7500 7000

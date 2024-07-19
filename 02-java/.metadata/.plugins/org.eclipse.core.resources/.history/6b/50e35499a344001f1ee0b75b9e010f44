@@ -1,0 +1,55 @@
+package com.ssafy.hw.day03.step04;
+
+
+/**
+ * 8방에서 0 또는 N에 해당하는 좌표를 만나면 break 또는 왕이 있는 좌표에 들어갈 경우 
+ * check를 true상태로 바꾸고 8번 반복하는 for loop문을 탈출
+ * 
+ */
+
+import java.io.*;
+import java.util.*;
+
+public class Checkmate {
+
+	public static void main(String[] args) throws Exception{
+		System.setIn(new FileInputStream("data/Checkmate.txt"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		int T = Integer.parseInt(br.readLine());
+		int[] dr = new int[] {-1, 1, 0, 0, -1, 1, 1, -1};
+		int[] dc = new int[] {0, 0, -1, 1, 1, -1, 1, -1};
+		for (int i = 0; i < T; i++) {
+			boolean check = false;
+			int N = Integer.parseInt(br.readLine());
+			StringTokenizer st = new StringTokenizer(br.readLine());
+			int qr = Integer.parseInt(st.nextToken());
+			int qc = Integer.parseInt(st.nextToken());
+			int kr = Integer.parseInt(st.nextToken());
+			int kc = Integer.parseInt(st.nextToken());
+			
+			OUT:
+			for (int j = 0; j < 8; j++) {
+				int nr = qr;
+				int nc = qc;
+				while (true) {
+					nr = nr+dr[j];
+					nc = nc+dc[j];
+					
+					if(nr == kr && nc == kc) {
+						check = true;
+						break OUT;
+					}
+					if(nr < 0 || nr > N || nc < 0 || nr < N) {
+						break;
+					}	
+				}
+			}
+			bw.write("#"+(i+1)+" ");
+			bw.write(check ? "1\n" : "0\n");
+		}
+		bw.flush();
+	}
+}
+

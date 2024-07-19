@@ -1,0 +1,26 @@
+package solved;
+
+import java.io.*;
+
+public class Gugudan {
+	
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		System.out.print("숫자를 입력하세요 : ");
+		int dan = Integer.parseInt(br.readLine());
+		while (true) {
+			if(dan == 0) {
+				System.out.println("프로그램 종료");
+				break;
+			}
+			for (int i = dan; i <= dan; i++) {
+				for (int j = 1; j <= 9; j++) {
+					System.out.printf("%d * %d = %d\n", dan, j, dan*j);
+				}
+			}
+			bw.flush();
+			bw.close();
+		}
+	}
+}

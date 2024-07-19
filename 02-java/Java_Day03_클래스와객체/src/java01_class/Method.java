@@ -1,0 +1,69 @@
+package java01_class;
+
+import java.util.Random;
+
+public class Method {
+	
+	String name;
+	int age;
+	String hobby;
+	
+	Method(){
+		
+	}
+	Method(String name, int age){
+		this.name = name;
+		this.age = age;
+	}
+	Method(String hobby){
+		this("홍길동", 10);
+		this.hobby = hobby;
+	}
+	
+	
+	public static void main(String[] args) {
+		Method method = new Method();
+		method.하루일과();
+		int[] arr = new int[2];
+		System.out.println(method.데이터값검사(10));
+		
+		System.out.println(arr);
+		System.out.println(method.배열주소(arr));
+		System.out.println(arr);
+	}
+	
+	boolean 교육() {
+		System.out.println("오전 수업을 듣는다.");
+		System.out.println("점심을 먹는다.");
+		System.out.println("오후 수업을 듣는다.");
+		Random random = new Random();
+		return random.nextBoolean();
+	}
+	
+	void 오전준비() {
+		System.out.println("아침에 일어난다.");
+		System.out.println("대중교통으로 교육장으로 이동한다.");
+	}
+	
+	void 교육이후시간(boolean 과제여부) {
+		System.out.println("대중교통으로 집으로 이동한다.");
+		if(과제여부) {
+			System.out.println("과제를 해결한다.");
+		}
+		System.out.println("잠을 잔다.");
+	}	
+	
+	void 하루일과() {
+		오전준비();
+		교육이후시간(교육());
+	}
+	
+	int[] 배열주소(int[] arr) {
+		return arr;
+	}
+	
+	double 데이터값검사(double d) {
+		return d;
+	}
+	
+}

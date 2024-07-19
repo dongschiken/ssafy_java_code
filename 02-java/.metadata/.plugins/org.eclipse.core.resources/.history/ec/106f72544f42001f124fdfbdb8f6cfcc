@@ -1,0 +1,77 @@
+package solved;
+
+import java.io.*;
+import java.util.*;
+
+public class Main_백준_집합_11723 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	
+	public static void main(String[] args) throws NumberFormatException, IOException {
+
+		int N = Integer.parseInt(br.readLine());
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		
+		for (int i = 0; i < N; i++) {
+			String[] str = br.readLine().split(" ");
+			switch (str[0]) {
+			case "add":
+				add(list, str);
+				break;
+			case "check":
+				check(list, str);
+				break;
+			case "remove":
+				remove(list, str);
+				break;
+			case "toggle":
+				toggle(list, str);
+				break;
+			case "all":	
+				all(list, str);
+				break;
+			case "empty":
+				break;
+			
+			default:
+				break;
+			}
+		}
+		
+	}
+
+	private static void all(ArrayList<Integer> list, String[] str) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void toggle(ArrayList<Integer> list, String[] str) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void remove(ArrayList<Integer> list, String[] str) {
+		if(list.contains(Integer.parseInt(str[1]))) {
+			list.remove(Integer.parseInt(str[1]));
+		}
+		
+	}
+
+	private static void add(ArrayList<Integer> list, String[] str) {
+		if(!list.contains(Integer.parseInt(str[1]))) {
+			list.add(Integer.parseInt(str[1]));
+		}
+		
+	}
+
+	private static void check(ArrayList<Integer> list, String[] str) throws IOException {
+		if(list.contains(Integer.parseInt(str[1]))) {
+			bw.write("1\n");
+		}else {
+			bw.write("0\n");
+		}
+		
+		
+	}
+
+}

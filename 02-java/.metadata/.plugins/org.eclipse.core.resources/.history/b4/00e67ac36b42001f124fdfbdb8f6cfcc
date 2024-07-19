@@ -1,0 +1,21 @@
+package java06_offline;
+
+import java.util.Scanner;
+
+public class IntroTest {
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int n = Integer.parseInt(sc.nextLine());
+		String s = sc.nextLine();
+		String line = sc.nextLine();
+
+		
+//		 sc.nextLine() 과 sc.next(), sc.nextInt()의 차이점
+//		 sc.nextLine()메서드는 줄단위로 입력받는데 \r\n이 나올때 까지 읽어서 개행문자를 버린다.. 그래서 엔터를 치면 그 전까지의 1줄을 읽는다.
+//		 sc.nextLine()은 줄넘김 문자를 읽어서 버린다.
+//		 sc.next()는 줄넘김 문자까지 읽고 버리지는 않는다.
+		
+	}
+}

@@ -1,0 +1,38 @@
+package com.ssafy.hw.day04.step05;
+
+import java.util.Date;
+
+public class BoardTest {
+	
+	
+	public static void main(String[] args) {
+		Date date = new Date();
+		User user1 = new User(0, "ssafy", "1234", "김싸피", "김싸피", "ssafy@ssafy.com");
+		User user2 = new User(1, "hong", "123", "홍싸피", "ssafy.hong", "hong@ssafy.com");
+		User user3 = new User(2, "samsic", "samsic", "김삼식", "삼식이", "kim@ssafy.com");
+		User user4 = new User(3, "happy", "happy", "이싸피", "해피바이러스", "lee@ssafy.com");
+		
+		Article article1 = new Article(0, "공지사항", "게시글 내용", 0, 0, date);
+		Article article2 = new Article(0, "공지사항", "게시글 내용", 0, 0, date);
+		Article article3 = new Article(0, "공지사항", "게시글 내용", 0, 0, date);
+		Article article4 = new Article(0, "공지사항", "게시글 내용", 0, 0, date);
+		
+		System.out.println("User 출력");
+		System.out.println("-".repeat(20));
+		System.out.println(user1.toString());
+		System.out.println(user2.toString());
+		System.out.println(user3.toString());
+		System.out.println(user4.toString());
+		
+		System.out.println("게시글");
+		System.out.println("-".repeat(20));
+		
+		
+		System.out.println("User 출력");
+		System.out.println("-".repeat(20));
+	
+		
+		
+	}
+	
+}

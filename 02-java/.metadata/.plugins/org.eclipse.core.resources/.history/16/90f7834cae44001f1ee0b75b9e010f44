@@ -1,0 +1,17 @@
+package modifier00_import;
+
+public class Person {
+
+	int age;
+	String name;
+	
+	
+	private static Person person = new Person();
+	
+	private Person(){}
+	
+	public static Person getInstance() {
+		return person;
+	}
+	
+}

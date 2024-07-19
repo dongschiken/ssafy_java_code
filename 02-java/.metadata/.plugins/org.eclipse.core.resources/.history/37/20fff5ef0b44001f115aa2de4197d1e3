@@ -1,0 +1,31 @@
+package com.ssafy.hw.day03.step05;
+
+public class BoardTest {
+	
+	
+	public static void main(String[] args) {
+		User user1 = new User(0, "ssafy", "1234", "김싸피", "김싸피", "ssafy@ssafy.com");
+		User user2 = new User(1, "hong", "123", "홍싸피", "ssafy.hong", "hong@ssafy.com");
+		User user3 = new User(2, "samsic", "samsic", "김삼식", "삼식이", "kim@ssafy.com");
+		User user4 = new User(3, "happy", "happy", "이싸피", "해피바이러스", "lee@ssafy.com");
+			
+		
+		System.out.println("User 출력");
+		System.out.println("-".repeat(20));
+		System.out.println(user1.toString());
+		System.out.println(user2.toString());
+		System.out.println(user3.toString());
+		System.out.println(user4.toString());
+		
+		System.out.println("게시글");
+		System.out.println("-".repeat(20));
+		
+		
+		System.out.println("User 출력");
+		System.out.println("-".repeat(20));
+	}
+	
+	
+	
+	
+}

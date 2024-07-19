@@ -1,0 +1,91 @@
+package com.ssafy.hw.day03.step03;
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+	
+	static int[] searchIndexX = {0, 1, -1, 0, 0, 1, 1, -1, -1};
+	static int[] searchIndexY = {0, 0, 0, 1, -1, -1, 1, 1, -1};
+	
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		int testcase = Integer.parseInt(br.readLine());
+		StringTokenizer st;
+		for (int i = 0; i < testcase; i++) {
+			// 한 변의 길이
+			int N = Integer.parseInt(br.readLine());
+			// 0과 max 값에 대한 예외처리 안하려고 선언
+			String[][] city = new String[N+2][N+2];
+			
+			// 도시 초기화
+			for (int j = 1; j < N+1; j++) {
+				st = new StringTokenizer(br.readLine());
+				for (int j2 = 1; j2 < N+1; j2++) {
+					city[j][j2] = st.nextToken();
+				}
+			}
+			System.out.println(Arrays.deepToString(city));
+			int max = Integer.MIN_VALUE;
+			for (int j = 1; j <= N; j++) {
+				// 8방 탐색
+				boolean check = true;
+				int[] indexs = new int[2];
+				for (int k = 1; k <= N; k++) {
+					for (int j2 = 1; j2 <= 8; j2++) {
+						// 내 위치는 항상 B일때만 체크
+						if(city[j][k].equals("G"))break;
+						if(city[j+searchIndexX[j2]][k+searchIndexX[j2]] == null || city[j+searchIndexX[j2]][k+searchIndexX[j2]].equals("G")) {
+							check = false;
+							break;
+						}
+					}
+					indexs[0] = j;
+					indexs[1] = k;
+				}
+				int count = 0;
+				if(check) {
+					for (int k = 1; k <= N; k++) {
+						System.out.println(city[k][indexs[1]]);
+						System.out.println(city[indexs[0]][k]);
+						if(city[k][indexs[1]] != null && city[k][indexs[1]].equals("B")) {
+							count++;
+						}
+						if(city[indexs[0]][k] != null && city[indexs[0]][k].equals("B")) {
+							count++;
+						}
+					}
+				}
+				// 내 위치는 제거
+				count -= 2;
+				max = Math.max(max, count);
+			}
+			bw.write("#"+(i+1)+" "+max+"");
+			
+		}
+		bw.flush();
+		
+		
+	}
+
+}
+//1
+//6
+//G B G G B B
+//G B G G B G
+//B B B B G B
+//B G B B B B
+//G B B B B G
+//G B B B B G
+//5
+//G B G G B
+//G B G G B
+//B B B B G
+//B G B B B
+//G B B B B
+//3
+//G G B
+//G B B
+//B B B

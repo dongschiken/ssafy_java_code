@@ -1,0 +1,9 @@
+package java04_control;
+
+public class MemberVO {
+	
+	
+	int id;
+	String name;
+	
+}

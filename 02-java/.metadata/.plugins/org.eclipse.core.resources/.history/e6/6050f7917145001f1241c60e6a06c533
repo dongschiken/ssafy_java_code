@@ -1,0 +1,77 @@
+package com.ssafy.class_extends;
+
+import java.util.Scanner;
+
+public class Exam extends Object{
+	
+	
+	long testNumber;
+	String testWriter;
+	String testContent;
+	
+	@Override
+	public boolean equals(Object obj){
+		return(this == obj);
+	}
+	
+	public long getTestNumber() {
+		return testNumber;
+	}
+
+	public void setTestNumber(long testNumber) {
+		this.testNumber = testNumber;
+	}
+
+	public String getTestWriter() {
+		return testWriter;
+	}
+
+	public void setTestWriter(String testWriter) {
+		this.testWriter = testWriter;
+	}
+
+	public String getTestContent() {
+		return testContent;
+	}
+
+	public void setTestContent(String testContent) {
+		this.testContent = testContent;
+	}
+
+	@Override
+	public String toString() {
+		return "Exam [testNumber=" + testNumber + ", testWriter=" + testWriter + ", testContent=" + testContent + "]";
+	}
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		final int MAX_FRIEND = 100;
+		
+		GrandSon gson = new GrandSon();
+		gson.age = 10;
+		gson.name = "김길동";
+		gson.job = "학생";
+		gson.schoolName = "대전초등학교";
+		gson.friends = new Friends[MAX_FRIEND];
+		
+		for (int i = 0; i < 1; i++) {
+			gson.friends[i] = new Friends(sc.next(), sc.nextInt());
+		}
+		
+		System.out.println(gson.friends[0].age+"살");
+		System.out.println(gson.friends[0].name);
+		
+		Exam e = new Exam();
+		e.setTestContent("테스트#1");
+		e.setTestNumber(202407191001L);
+		e.setTestWriter("김길동");
+		
+		System.out.println(e.toString());
+		
+		
+		e.equals(1)
+		System.out.println();
+	}
+	
+}
